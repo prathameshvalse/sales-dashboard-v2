@@ -2020,7 +2020,13 @@ def render_quick_actions_section(my_leads: pd.DataFrame, salesperson_name: str) 
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
-     if st.button("📞 Today's Follow-ups", use_container_width=True):
+        if st.button("📞 Today's Follow-ups", use_container_width=True):
+            today = datetime.now().strftime("%Y-%m-%d")
+            todays_leads = my_leads[my_leads['follow_up_date'] == today]
+            if not todays_leads.empty:
+                st.info(f"📅 You have {len(todays_leads)} follow-ups scheduled for today!")
+            else:
+                st.success("✅ No follow-ups scheduled for today. Great job!")
     
     with col2:
         if st.button("💰 Pipeline Calculator", use_container_width=True):
