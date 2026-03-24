@@ -1,0 +1,6 @@
+.venv/
+win_venv/
+__pycache__/
+*.log
+.streamlit/
+backups/
