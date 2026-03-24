@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+plotly
+openpyxl
+google-generativeai
+gspread
+gspread-dataframe
+google-auth-oauthlib
+plotly.express
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
